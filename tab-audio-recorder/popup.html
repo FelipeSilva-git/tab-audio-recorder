@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gravador de Aba</title>
+  <style>
+    body {
+      width: 220px;
+      font-family: system-ui, sans-serif;
+      padding: 16px;
+      text-align: center;
+      background: #1a1a1a;
+      color: #f5f5f5;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    #startBtn {
+      background: #e63946;
+      color: white;
+    }
+    #stopBtn {
+      background: #444;
+      color: white;
+    }
+    #status {
+      margin-top: 12px;
+      font-size: 12px;
+      opacity: 0.8;
+    }
+    #timer {
+      margin-top: 4px;
+      font-size: 20px;
+      font-weight: bold;
+      font-variant-numeric: tabular-nums;
+      color: #e63946;
+      min-height: 24px;
+    }
+    .limit-row {
+      margin-top: 14px;
+      text-align: left;
+    }
+    .limit-row label {
+      display: block;
+      font-size: 11px;
+      opacity: 0.7;
+      margin-bottom: 4px;
+    }
+    select {
+      width: 100%;
+      padding: 6px;
+      border-radius: 4px;
+      border: 1px solid #444;
+      background: #2a2a2a;
+      color: #f5f5f5;
+      font-size: 13px;
+    }
+    select:disabled {
+      opacity: 0.5;
+    }
+    #limitLabel {
+      margin-top: 6px;
+      font-size: 11px;
+      opacity: 0.6;
+    }
+    button:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <h3>🎙️ Gravador de Aba</h3>
+  <button id="startBtn">Iniciar Gravação</button>
+  <button id="stopBtn" disabled>Parar e Baixar</button>
+  <div id="timer"></div>
+  <div id="status">Pronto.</div>
+
+  <div class="limit-row">
+    <label for="limitSelect">Limite de gravação</label>
+    <select id="limitSelect">
+      <option value="15">15 minutos</option>
+      <option value="30">30 minutos</option>
+      <option value="60" selected>1 hora (padrão)</option>
+      <option value="120">2 horas</option>
+      <option value="180">3 horas</option>
+      <option value="240">4 horas</option>
+      <option value="0">Sem limite</option>
+    </select>
+    <div id="limitLabel"></div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
