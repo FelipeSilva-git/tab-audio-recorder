@@ -18,9 +18,10 @@
 
 - **Limite de tempo configurável**: por padrão a gravação para sozinha e
   baixa o arquivo automaticamente depois de **1 hora**. Dá pra trocar pra
-  15min / 30min / 1h / 2h / 3h / 4h / sem limite, direto no popup, antes
-  de clicar em "Iniciar Gravação" (a opção escolhida fica salva e é
-  lembrada da próxima vez). Implementado com `chrome.alarms`, que —
+  15min / 30min / 1h / 2h / 3h / 4h / sem limite, ou escolher **"Adaptativo"**
+  e digitar qualquer valor em minutos manualmente — direto no popup, antes
+  de clicar em "Iniciar Gravação" (a opção escolhida, incluindo valores
+  personalizados, fica salva e é lembrada da próxima vez). Implementado com `chrome.alarms`, que —
   assim como o `storage.session` — sobrevive ao service worker sendo
   descarregado, então o limite funciona mesmo que você não abra o popup
   de novo até a hora de parar. Ao parar automaticamente, aparece uma
